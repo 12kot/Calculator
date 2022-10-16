@@ -1,0 +1,28 @@
+let number = 3;
+
+let count = 0;
+
+letsGo(1);
+console.log(count);
+
+function letsGo(numb) {
+
+  if (numb + 2 <= number) {
+    letsGo(numb + 2);
+  }
+  
+  if (numb + 5 <= number) {
+    letsGo(numb + 5);
+  } 
+
+  if (numb * 3 <= number) {
+    letsGo(numb * 3);
+  }
+  
+  if (numb == number) {
+    count++;
+    numb = 1;
+    return;
+  }
+  
+}
