@@ -1,31 +1,24 @@
-let number = 9;
+let number = 13;
 
-let array = fill(number);
-array[number] = 1;
+let array = [0, 1, 0, 2];
 
-console.log(letsGo(number - 2, array));
+console.log(letsGo(number, array));
 
 function letsGo(numb, array) {
-  for (let i = numb; i > 0; i--) {
-    if (i + 2 <= number)
-      array[i] += array[i + 2];
+  for (let i = 4; i <= numb; i++) {
+    let summ = 0;
+
+    if (i - 2 >= 0)
+      summ += array[i - 2];
     
-    if (i + 5 <= number)
-      array[i] += array[i + 5];
+    if (i - 5 >= 0)
+      summ += array[i - 5];
     
-    if (i * 3 <= number)
-      array[i] += array[i * 3];
+    if (i / 3 >= 0 && i % 3 == 0)
+      summ += array[i / 3];
     
-    console.log(i + " " + array[i]);
+    array.push(summ);
   }
 
-  return array[1];
-}
-  
-function fill(number) {
-  let array = [];
-  for (let i = 0; i < number; i++)
-    array[i] = 0;
-  
-  return array;
+  return array[number];
 }
